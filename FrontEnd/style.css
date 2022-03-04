@@ -139,7 +139,7 @@ html {
 
 #Home ::before {
     content: "";
-    background: url("6.jpeg");
+    background: url("image/6.jpeg");
     position: absolute;
     top: 0px;
     left: 0px;
