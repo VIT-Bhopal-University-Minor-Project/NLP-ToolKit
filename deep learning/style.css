@@ -1,0 +1,222 @@
+/* CSS Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* CSS Variables */
+
+:root {
+    --navbar-height: 59px;
+}
+
+
+/* Navigation Bar */
+
+#navbar {
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+}
+
+#navbar::before {
+    content: "";
+    background-color: black;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+
+/* Navigation Bar: Logo and Image */
+
+#logo {
+    margin: 10px 30px;
+}
+
+#logo img {
+    margin: 10px 6px;
+}
+
+
+/* Navigation Bar: List Styling */
+
+#navbar ul {
+    display: flex;
+    font-family: 'baloo bhai' cursive;
+}
+
+#navbar ul li {
+    list-style: none;
+    font-size: 1.3rem;
+}
+
+#navbar ul li a {
+    color: white;
+    display: flex;
+    padding: 3px 65px;
+    border-radius: 100px;
+    text-decoration: none;
+}
+
+#navbar ul li a.a1 {
+    color: white;
+    display: flex;
+    padding: 3px 20px;
+    padding-left: 20px;
+    padding-top: 3px;
+    border-radius: 100px;
+    text-decoration: none;
+    margin: -1px 15px;
+    background-color: #000000;
+    border: 1px solid white;
+}
+
+#navbar ul li a.a2 {
+    color: white;
+    display: flex;
+    padding: 3px 20px;
+    padding-left: 20px;
+    border-radius: 100px;
+    text-decoration: none;
+    border: 1px solid gainsboro;
+    margin: -1px 55px;
+    background-color: #000000;
+}
+
+#navbar ul li a.a3 {
+    color: white;
+    display: flex;
+    padding: 3px 20px;
+    padding-left: 20px;
+    border-radius: 100px;
+    text-decoration: none;
+    border: 1px solid gainsboro;
+    margin: -1px 55px;
+    background-color: #000000;
+}
+
+#navbar ul li a.a4 {
+    color: white;
+    display: flex;
+    padding: 3px 20px;
+    padding-left: 20px;
+    border-radius: 100px;
+    text-decoration: none;
+    border: 1px solid gainsboro;
+    margin: -1px 60px;
+    background-color: #000000;
+}
+
+#navbar ul li a:hover {
+    color: black;
+    background-color: white;
+}
+
+
+/*Home Section*/
+
+#Home {
+    display: flex;
+    flex-direction: column;
+    padding: 3px 200px;
+    justify-content: center;
+    align-items: center;
+}
+
+#Home ::before {
+    content: "";
+    background: url("6.jpeg");
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+
+/*utility class */
+
+#Home h1 {
+    color: white;
+    text-align: center;
+    font-family: Bree serif, serif;
+    padding: 0px;
+    margin: 130px 0px 0px;
+}
+
+#Home p {
+    color: white;
+    text-align: center;
+    font-size: 1.1rem;
+    font-family: Bree serif, serif;
+    text-shadow: 3px 2px 3px #000000;
+}
+
+
+/*Services section*/
+
+.h-primary {
+    font-size: 7rem;
+    padding: 80px 0px 0px;
+    text-shadow: 3px 2px 3px black;
+}
+
+.h-secondary {
+    font-size: rem;
+    padding: 28px;
+}
+
+.btn {
+    padding: 6px 20px;
+    border: 2px solid white;
+    background-color: brown;
+    margin: 8px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    border-radius: 12px;
+    text-shadow: 1px 0px 0px black;
+    font-family: 'Source Serif 4', sans-serif;
+}
+
+.h-primary center h1 {
+    text-size-adjust: 100px;
+}
+
+.center {
+    text-align: center;
+}
+
+#text {
+    margin: 94px;
+    margin-left: -20px;
+}
+
+#text :hover.text {
+    margin: 94px;
+    margin-left: -20px;
+}
+
+#Home1 {
+    width: 100vw;
+    background-color: gray;
+    height: 100vh;
+}
+
+#text1 {
+    margin: 10px 01px;
+    padding: 20px;
+}
