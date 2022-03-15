@@ -3,10 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>About</title>
+  <title>Text Summerizer</title>
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   
-  <link rel="stylesheet" type="text/css" href="style.css">
+  
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/style.css') }}">
   <style type="text/css">
     *{
       margin: 0;
@@ -16,14 +17,14 @@
     
   </style>
 </head>
-<body onload="slider()">
+<body onload="slider()" style="background-color:#282e09;">
 
   <section>
-  <div class="banner">
+  <div class="banner" >
     <div class="slider">
       <img src="images/slider2.jpg" id="slideImg">      
     </div>
-    <div class="overlay">
+    <div class="overlay" style=" background: linear-gradient(rgb(0,0,0,0.7),rgba(0,0,0,0.7));">
       <div class="main-bar">
     <nav>
       <input type="checkbox" id="check">
@@ -37,8 +38,8 @@
       </div>
       <ul>
         <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Text-Summarizer</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="text-summerize.html">Text-Summarizer</a></li>
         <li><a href="#">Text-Classifier</a></li>
         <!--<li><a href="#">Grammer Checker</a></li>-->
         <li><a href="#">Text-Predictor</a></li>
@@ -47,17 +48,19 @@
   </div>
   <div class="content">
     <h1>Welcome to Natural Language Processing!</h1>
-    <h3>Hello to our team</h3>  
+    <h3></h3>  
       <div>
-        <button type="button">Learn More</button>
+        <button type="button">Learn More </button>
         <button type="button" class="btn-2">Hello</button>
       </div>
       </div>
     </div>
   </div>
 </section>
+    
+    <!--**************************   Team Section ************************-->
 
-  <section class="team">
+  <section class="team" id="about" style="background-image: -webkit-linear-gradient(#282e09, #1e113c);">
     <h1 class="ha">Our Team Members</h1>
     <div class="container">
       <div class="card">
@@ -65,7 +68,7 @@
           <img src="images/slider2.jpg">
         </div>
         <div class="pic">
-          <img src="images/teacher_1.jpg">
+          <img src="images/teacher_3.jpg">
         </div>
         <div class="info">
           <h3>Shubham kumar</h3>
@@ -126,10 +129,10 @@
           <img src="images/slider2.jpg">
         </div>
         <div class="pic">
-          <img src="images/teacher_3.jpg">
+          <img src="images/teacher_1.jpg">
         </div>
         <div class="info">
-          <h3>fvbfeuau</h3>
+          <h3>Tanay Joshi</h3>
           <span> <i class="fas fa-code"></i> Web Designer</span>
           <p>fbj f vjej dnvi jdnven nfvif eicew</p>
           <div class="icons">
@@ -141,15 +144,15 @@
         </div>
       </div>
 
-      <!--<div class="card">
+      <div class="card">
         <div class="bg-image">
           <img src="images/slider2.jpg">
         </div>
         <div class="pic">
-          <img src="images/teacher_1.jpg">
+          <img src="images/teacher_3.jpg">
         </div>
         <div class="info">
-          <h3>Someone's name</h3>
+          <h3>Ansh Makkar</h3>
           <span> <i class="fas fa-code"></i> Web Designer</span>
           <p>fbj f vjej dnvi jdnven nfvif eicew</p>
           <div class="icons">
@@ -158,7 +161,7 @@
             <a href="#" class="fab fa-github"></a>
             <a href="#" class="fab fa-linkedin"></a>
           </div>
-        </div>-->
+        </div>
       </div>
     </div>
       
@@ -188,9 +191,7 @@
         setTimeout('slider()',3000);
       }
 
-  </script>
-
-  
+  </script> 
 
 </body>
 </html>

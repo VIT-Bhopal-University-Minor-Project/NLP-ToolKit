@@ -5,8 +5,9 @@
 
 		}
 		body{
-			background-color: #333;
+		
 			font-family: 'Poppins', sans-serif;
+			/**background-color: #282e09;*/
 		}
 		.main-bar{
 			background-color: #22272b !important;
@@ -23,7 +24,7 @@
 			margin-bottom: 0;
 			margin-left: 0;
 			margin-right: 0;
-			width: 180px;
+			width: 189px;
 			height: 68px;
 			position: relative;
 			z-index: 9;
@@ -94,6 +95,7 @@
 		nav li:hover a{
 			color: #020101;
 			background-color: #fbbd0d;
+			text-decoration: none;
 		}
 		@media(max-width: 1250px){
 			.main-bar{
@@ -213,8 +215,7 @@
     
     .overlay{
       width: 100%;
-      height: 100vh;
-      background: linear-gradient(rgb(0,0,0,0.7),rgba(0,0,0,0.7));
+      height: 100vh;     
       position: absolute;
       top: 0;
     }
@@ -225,7 +226,11 @@
       color: #fff;
     }
     .content h1{
-      font-size: 60px;
+    	display: flex;
+    	justify-content: center;
+      font-size: 50px;
+      align-content: flex-start;
+      flex-direction: row;
     }
     .content h3{
       width: 80%;
@@ -286,19 +291,24 @@
     	flex-wrap: wrap;
     }
     .card{
-    	height: 500px;
-    	width: 290px;
+    	height: 380px;
+    	width: 220px;
     	margin: 20px;
     	box-shadow: 0 3px 5px #000;
     	border-radius: 10px;
     	overflow: hidden;
     	text-align: center;
     	background-color: #222;
+    	transition: 1s;
 
+    }
+    .card:hover{
+    	transform: scale(1.1);
+    	z-index: 2;
     }
     .card .bg-image img{
     	width: 100%;
-    	height: 230px;
+    	height: 160px;
     	object-fit: cover;
     	clip-path: polygon(0 0, 100% 0%, 100% 70%, 45% 100%, 0 70%);
     }
@@ -336,3 +346,118 @@
     .card .info .icons a:hover{
     	color: #f0f0f0;
     }
+
+
+    /**************************************Summiriser page button**************************************/
+   
+    .leftside, .rightside{    	
+    	height: 70vh;
+    	width: 100%;
+    }
+    @media screen and (min-width: 768px){
+    	.leftside, .rightside{
+
+    	}
+    }
+    .leftside{
+    	background-image:-webkit-linear-gradient(0deg, #766dff 0%, #F97011 100%) ;
+    }
+    .rightside{
+    	background-image: -webkit-linear-gradient(0deg, #766dff 0%, #F97011 100%);
+    }
+    /************************************************************************************************/
+    /**.container8{
+    	margin-top: 4%;
+    	margin-left: 30%;
+    	padding: 10px;
+    	width: 300px;
+    	border: 1px solid #ededed;
+
+    	-moz-box-shadow:0px 0px 5px 1px rgba(0,0,0,0.03) ;
+    	-webkit-box-shadow:0px 0px 5px 1px rgba(0,0,0,0.03) ;
+    	box-shadow:0px 0px 5px 1px rgba(0,0,0,0.03) ;
+    }**/
+    textarea{
+    	margin: 5px;
+    	border: none;
+    	outline: none;
+    	resize:  none;
+    	padding: 10px;
+    	border: 3px solid #ededed;
+    	-moz-box-shadow:0px 0px 5px 1px rgba(0,0,0,0.03) ;
+    	-webkit-box-shadow:0px 0px 5px 1px rgba(0,0,0,0.03) ;
+    	box-shadow:0px 0px 5px 1px rgba(0,0,0,0.03) ;
+    }
+    
+    .textarea_style{
+    	margin: 5px;
+    	width: auto;
+    	height: auto;
+    	border: 1px solid #226cff;
+    	border-radius: 2px;
+    	font-size: 16px;
+
+    }
+    .textarea_style:hover{
+    	-moz-box-shadow:0px 0px 10px 1px #ebf6ff ;
+    	-webkit-box-shadow:0px 0px 10px 1px #ebf6ff ;
+    	box-shadow:0px 0px 10px 1px #ebf6ff ;
+    	border: 1px solid #229cff;
+
+    }
+    .textarea_style:focus{
+    	-moz-box-shadow:0px 0px 5px 1px #ebf6ff;
+    	-webkit-box-shadow:0px 0px 5px 1px #ebf6ff ;
+    	box-shadow:0px 0px 5px 1px #ebf6ff;
+    	border: 1px solid #229cff;
+
+    }
+
+    textarea::-webkit-scrollbar{
+    	width: 3px;
+    }
+    textarea::-webkit-scrollbar-track{
+    	-webkit-box-shadow:0px 0px 10px 1px #bddae0 ;
+    }
+    textarea::-webkit-scrollbar-thumb{
+    	background-color: #0b8ff9;
+    }
+    
+    /*****************************************************************************************************************************************/
+    .content8{
+      width: 60%;
+      margin: 160px auto 0;
+      text-align: center;
+      color: #fff;
+    }
+    
+    /***Button Slider****/
+    .button1{
+      width: 200px;
+      padding: 15px 0;
+      text-align: center;
+      margin: 0 10px;
+      border-radius: 25px;
+      font-weight: bold;
+      border: 2px solid #fbbd0d;
+      background: #b6c918;
+      color: #fff;
+      cursor: pointer; 
+      transition: background 0.5s; 
+    }
+    .button2:hover{
+      background: transparent;
+      border: 2px solid #fff;
+    }
+
+    .btn-3{
+      border: 2px solid #fff;
+      background: transparent;
+    }
+    .btn-3:hover{
+      border: 2px solid #fd7250;
+      background: #fd7250;
+    }
+
+
+
