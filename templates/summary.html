@@ -61,18 +61,19 @@
     </div>
   </div>
 
-
+        <form action="/summarize" method="post">
         <div class="form-group purple-border" >
           <label for="exampleFormControlTextarea4"></label>
-          <textarea class="form-control" id="exampleFormControlTextarea4" rows="12" placeholder="Write something here..."></textarea>
+          <textarea class="form-control" name="data" id="exampleFormControlTextarea4" rows="12" placeholder="Write something here..."></textarea>
         </div>
-        <button type="button" class="btn btn-warning float-left " >Upload File</button>
+        <button type="button" name="submit" value="UPLOAD" class="btn btn-warning float-left " >Upload File</button>
 
         
 
-      <button type="button" class="btn btn-warning float-right " >Submit</button>
+      <button type="submit" class="btn btn-warning float-right " >Submit</button>
 
     </div>
+  </form>
 
 
 
@@ -80,7 +81,7 @@
 
         <div class="form-group shadow-textarea">
           <label for="exampleFormControlTextarea">Output:</label>
-          <textarea class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="11" ></textarea>
+          <textarea class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="11" >{{ result }}</textarea>
         </div>
       </div>
     </div>
