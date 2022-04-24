@@ -1,3 +1,4 @@
+from fileinput import filename
 from flask import Flask, redirect, render_template,request, url_for
 from summarizer import Summarizer
 from summarizer.sbert import SBertSummarizer
@@ -7,9 +8,18 @@ import os
 from click import File
 from werkzeug.utils import secure_filename
 from werkzeug.datastructures import FileStorage
+import pandas as pd
+import numpy as np
+from transformers import AutoTokenizer
+from transformers import AutoModelForSequenceClassification
+import torch
 
-model = SBertSummarizer('paraphrase-MiniLM-L6-v2')
 
+tokenizer= AutoTokenizer.from_pretrained("nlptown/bert-base-multilingual-uncased-sentiment")
+modelSum = AutoModelForSequenceClassification.from_pretrained('nlptown/bert-base-multilingual-uncased-sentiment')
+
+# model = SBertSummarizer('paraphrase-MiniLM-L6-v2')
+model = Summarizer()
 app = Flask(__name__)
 
 @app.route("/")
@@ -26,15 +36,33 @@ def summarizerPage():
 
 @app.route("/summarize",methods=['POST','GET'])
 def getSummary():
-    print("hello")
-    body=request.form['data']
-    print(body)
-    result = model(body, num_sentences=2)
-    print("hello")
-    print(result)
-    return render_template('summary.html',result=result)
+    print(request.values)
+    ratio_range = request.form['slider-range']
+    print(type(ratio_range))
+    uploaded_file = request.files['text-file']
+    if uploaded_file.filename != '' and allowed_file(uploaded_file.filename):
+        filename = secure_filename(uploaded_file.filename)
+        uploaded_file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        file = open(UPLOAD_FOLDER + '/' +filename, mode='r')
+        body = file.read()
+        result = model(body, ratio=ratio_range)
+        return render_template('summary.html', result = result)
+    else:
+        body=request.form['data']
+        # print(body)
+        result = model(body, ratio=float(ratio_range))
+        print("hello")
+        # print(result)
+        return render_template('summary.html',result=result)
     # return render_template('summary.html',result=result)
 
+@app.route("/sentimental", methods = ['GET','POST'])
+def sentimentalPage():
+    if request.method == 'POST':
+        return redirect(url_for('index'))
+
+    print("Hello")
+    return render_template('Sentimental.html')
 
 
 
@@ -44,7 +72,7 @@ def getSummary():
 
 
 UPLOAD_FOLDER = './static/uploads'
-ALLOWED_EXTENSIONS = set(['pdf', 'txt', 'doc', 'docx'])
+ALLOWED_EXTENSIONS = set(['txt'])
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
