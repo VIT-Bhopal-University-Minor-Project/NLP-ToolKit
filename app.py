@@ -1,7 +1,7 @@
 from fileinput import filename
 from flask import Flask, redirect, render_template,request, url_for
 from summarizer import Summarizer
-from summarizer.sbert import SBertSummarizer
+# from summarizer.sbert import SBertSummarizer
 from curses import flash
 from os import path
 import os
@@ -16,9 +16,9 @@ import torch
 
 
 tokenizer= AutoTokenizer.from_pretrained("nlptown/bert-base-multilingual-uncased-sentiment")
-modelSum = AutoModelForSequenceClassification.from_pretrained('nlptown/bert-base-multilingual-uncased-sentiment')
+modelSA = AutoModelForSequenceClassification.from_pretrained('nlptown/bert-base-multilingual-uncased-sentiment')
 
-# model = SBertSummarizer('paraphrase-MiniLM-L6-v2')
+# modelSA = SBertSummarizer('paraphrase-MiniLM-L6-v2')
 model = Summarizer()
 app = Flask(__name__)
 
@@ -45,7 +45,7 @@ def getSummary():
         uploaded_file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         file = open(UPLOAD_FOLDER + '/' +filename, mode='r')
         body = file.read()
-        result = model(body, ratio=ratio_range)
+        result = model(body, ratio=float(ratio_range))
         return render_template('summary.html', result = result)
     else:
         body=request.form['data']
@@ -64,6 +64,18 @@ def sentimentalPage():
     print("Hello")
     return render_template('Sentimental.html')
 
+@app.route("/sentimentalize", methods =['POST'])
+def getSentiment():
+    review = request.form['data']
+    print(review)
+
+    result = sentiment_score(review)
+    return render_template('Sentimental.html', result=result)
+
+def sentiment_score(review):
+    tokens = tokenizer.encode(review, return_tensors='pt')
+    result = modelSA(tokens)
+    return int(torch.argmax(result.logits))+1
 
 
 # @app.route('/')
