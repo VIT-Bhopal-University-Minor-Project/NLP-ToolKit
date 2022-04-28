@@ -31,7 +31,7 @@
         <span></span>
       </label>
       <div class="logo-header">
-        <a href="#">NLP-ToolKit</a>       
+        <a href="{{ url_for('index') }}">NLP-ToolKit</a>       
       </div>
       <ul>
         <li><a href="{{ url_for('index') }}">Home</a></li>
@@ -39,7 +39,6 @@
         <li ><a href="{{ url_for('summarizerPage') }}">Text-Summarizer</a></li>
         <li class="active"><a href="{{ url_for('sentimentalPage') }}">Sentimental analysis </a></li>
         <!--<li><a href="#">Grammer Checker</a></li>-->
-        <li><a href="#">Text-Predictor</a></li>
       </ul>
     </nav>
   </div>  
@@ -51,7 +50,7 @@
 
  <section>
    <br>
-   <center><img src="16.png" class="img-fluid" alt="Responsive image"></center>
+   <center><img src="{{ url_for('static', filename='Sentimental.png') }}" class="img-fluid" alt="Responsive image"></center>
    <!-- <center><img src="16.png" style="height:;"></center> -->
    
    <div class="row justify-content-center">
@@ -68,7 +67,7 @@
       <input type="text" readonly class="form-control-plaintext" id="" value="% of Sentimentalm ">
     </div> -->
     
-        <textarea class="z-depth-1" id="exampleFormControlTextarea6" placeholder="% of Sentimental" style="text-align:center;">{{ result }}</textarea>
+        <h1 class="z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="Sentimental Score" style="text-align:center;">{{ result }}</h1>
         <br>
 
         

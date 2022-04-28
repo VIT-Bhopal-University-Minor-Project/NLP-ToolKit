@@ -34,15 +34,14 @@
         <span></span>
       </label>
       <div class="logo-header">
-        <a href="#">NLP-ToolKit</a>       
+        <a href="{{ url_for('index') }}">NLP-ToolKit</a>       
       </div>
       <ul>
         <li class="active"><a href="{{ url_for('index') }}">Home</a></li>
         <li><a href="#about">About Us</a></li>
         <li><a href="{{ url_for('summarizerPage') }}">Text-Summarizer</a></li>
-        <li><a href="#">Sentimental analysis </a></li>
+        <li><a href="{{ url_for('sentimentalPage') }}">Sentimental analysis </a></li>
         <!--<li><a href="#">Grammer Checker</a></li>-->
-        <li><a href="#">Text-Predictor</a></li>
       </ul>
     </nav>
   </div>
@@ -50,8 +49,8 @@
     <h1>Welcome to Natural Language Processing!</h1>
     <h3></h3>  
       <div>
-        <button type="button">Summarize! </button>
-        <button type="button" class="btn-2">Hello</button>
+        <a href="{{ url_for('summarizerPage') }}"><button type="button"> Summarize! </button></a>
+        <a href="{{ url_for('sentimentalPage') }}"><button type="button" class="btn-2">Sentiment Review</button></a>
       </div>
       </div>
     </div>
@@ -72,8 +71,7 @@
         </div>
         <div class="info">
           <h3>Dipan Das</h3>
-          <span> <i class="fas fa-code"></i> Web Designer</span>
-          <p>fbj f vjej dnvi jdnven nfvif eicew</p>
+          <span> <i class="fas fa-code"></i>Backend Developer</span>
           <div class="icons">
             <a href="#" class="fab fa-facebook-f"></a>
             <a href="#" class="fab fa-instagram"></a>
@@ -92,8 +90,7 @@
         </div>
         <div class="info">
           <h3>Tanay Joshi</h3>
-          <span> <i class="fas fa-code"></i> Web Designer</span>
-          <p>fbj f vjej dnvi jdnven nfvif eicew</p>
+          <span> <i class="fas fa-code"></i>Machine Learning Developer</span>
           <div class="icons">
             <a href="#" class="fab fa-facebook-f"></a>
             <a href="#" class="fab fa-instagram"></a>
@@ -113,8 +110,7 @@
         </div>
         <div class="info">
           <h3>Shubham Kumar</h3>
-          <span> <i class="fas fa-code"></i> Web Designer</span>
-          <p>fbj f vjej dnvi jdnven nfvif eicew</p>
+          <span> <i class="fas fa-code"></i>Frontend Developer</span>
           <div class="icons">
             <a href="https://www.facebook.com/profile.php?id=100007891505843" class="fab fa-facebook-f"></a>
             <a href="https://www.instagram.com/shubham__07_/" class="fab fa-instagram"></a>
@@ -133,8 +129,7 @@
         </div>
         <div class="info">
           <h3>Ansh Makkar</h3>
-          <span> <i class="fas fa-code"></i> Web Designer</span>
-          <p>fbj f vjej dnvi jdnven nfvif eicew</p>
+          <span> <i class="fas fa-code"></i>Machine Learning Developer</span>
           <div class="icons">
             <a href="#" class="fab fa-facebook-f"></a>
             <a href="#" class="fab fa-instagram"></a>
@@ -153,8 +148,7 @@
         </div>
         <div class="info">
           <h3>Anmol Gupta</h3>
-          <span> <i class="fas fa-code"></i> Web Designer</span>
-          <p>fbj f vjej dnvi jdnven nfvif eicew</p>
+          <span> <i class="fas fa-code"></i>Python Developer</span>
           <div class="icons">
             <a href="#" class="fab fa-facebook-f"></a>
             <a href="#" class="fab fa-instagram"></a>

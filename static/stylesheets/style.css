@@ -537,12 +537,12 @@ background: #fd7250;
 .range-slider1 {
   --primary-color: #0366d6;
   --value-offset-y: var(--ticks-gap);
-  --value-active-color: white;
+  --value-active-color: rgb(175, 161, 242);
   --value-background: transparent;
   --value-background-hover: var(--primary-color);
   --value-font: 700 12px/1 Arial;
   --fill-color: #0c3768;
-  --progress-background: #eee;
+  --progress-background: rgb(141, 146, 237);
   --progress-radius: 20px;
   --track-height: calc(var(--thumb-size) / 2);
   --min-max-font: 12px Arial;
@@ -554,7 +554,7 @@ background: #fd7250;
     0 0 0 99px var(--thumb-color) inset;
   --thumb-shadow-active: 0 0 0 calc(var(--thumb-size) / 4) inset
       var(--thumb-color),
-    0 0 0 99px var(--primary-color) inset, 0 0 3px rgba(0, 0, 0, 0.4);
+      #ebf6ff var(--primary-color) inset, 0 0 3px rgba(0, 0, 0, 0.4);
   --thumb-shadow-hover: var(--thumb-shadow);
   --ticks-thickness: 1px;
   --ticks-height: 5px;
