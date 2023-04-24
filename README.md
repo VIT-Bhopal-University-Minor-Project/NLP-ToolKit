@@ -297,7 +297,7 @@ Load Reviews into Data frame and Score
 
 # ANSH MAKKAR (21MCA10010)
 
-__ TANAY JOSHI  \(21MCA10118\)__
+__TANAY JOSHI  \(21MCA10118\)__
 
 __ANMOL GUPTA \(21MCA10057\)__
 
